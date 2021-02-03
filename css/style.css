@@ -1,0 +1,54 @@
+:root {
+  --path: 'M0,0 C40,20 110,-20 150,-10'
+}
+
+body {
+  text-align: center; 
+}
+
+img {
+  width: 50%;
+}
+
+.tentacle {
+  offset-path: path(var(--path));
+  width: 30%;
+  position: absolute;
+  animation: distance 4000ms infinite ease-in-out;
+  animation-direction: alternate;
+  z-index: -1
+}
+
+.tentacle:first-child {
+  transform: rotate(-40deg);
+  top: 40%;
+}
+
+.tentacle:nth-child(2) {
+  animation-delay: 500ms;
+  transform: rotate(-70deg);
+  top: 60%;
+  left: 30%;
+}
+
+.tentacle:nth-child(3) {
+  animation-delay: -2000ms;
+  top: 35%;
+  left: 70%;
+  transform: scaleX(-1) rotate(-10deg)
+}
+
+.tentacle:nth-child(4) {
+  animation-delay: -1400ms;
+  transform: rotate(270deg);
+  top: 60%;
+  left: 65%;
+  transform: scaleX(-1) rotate(-45deg)
+}
+
+
+@keyframes distance {
+  100% {
+    offset-distance: 100%;
+  }
+}
